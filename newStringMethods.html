@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New String Methods</title>
+  </head>
+  <body>
+    <pre></pre>
+
+    <script>
+      const nameOfPerson = "Favour";
+
+      // startsWith
+      console.log(nameOfPerson.toLocaleLowerCase().startsWith("f")); // true
+      console.log(nameOfPerson.toLocaleLowerCase().startsWith("a")); // false
+
+      // set the position to start from
+      console.log(nameOfPerson.toLocaleLowerCase().startsWith("a", 3)); // false
+      console.log(nameOfPerson.toLocaleLowerCase().startsWith("v", 3)); // false
+
+      // endsWith
+      console.log(nameOfPerson.toLocaleLowerCase().endsWith("f")); // false
+      console.log(nameOfPerson.toLocaleLowerCase().endsWith("r")); // true
+
+      // includes
+      console.log(nameOfPerson.toLocaleLowerCase().includes("f")); // true
+      console.log(nameOfPerson.toLocaleLowerCase().includes("vo")); // true
+      console.log(nameOfPerson.toLocaleLowerCase().includes("z")); // true
+
+      // repeat
+    </script>
+  </body>
+</html>

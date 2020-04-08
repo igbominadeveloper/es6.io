@@ -1,16 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Template Strings!</title>
-</head>
-<body>
-<script>
-  const name = 'Snickers';
-  const age = 2;
-  const sentence = `My dog ${name} is ${age * 7} years old.`;
-  console.log(sentence);
+  <head>
+    <meta charset="UTF-8" />
+    <title>Template Strings!</title>
+    <style>
+      .hl {
+        background: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function highlight(strings, ...values) {
+        let finalString = "";
+        strings.forEach((string, index) => {
+          finalString += `${string}<span class="hl">${
+            values[index] || ""
+          }</span>`;
+        });
+        return finalString;
+      }
 
-</script>
-</body>
+      const dog = {
+        name: "Snickers",
+        age: 2,
+      };
+
+      const sentence = highlight`My dog ${dog.name} is ${
+        dog.age * 7
+      } years old.`;
+
+      document.body.innerHTML = sentence;
+    </script>
+  </body>
 </html>
